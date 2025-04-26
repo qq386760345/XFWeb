@@ -61,23 +61,23 @@ const products = ref([
   {
     name: '讯飞听见',
     description: '你的随身录音记录助手',
-    icon: '/src/assets/product1.png',
+    icon: './assets/product1.png',
     route: '/tingjian'
   },
   {
     name: '讯飞写作',
     description: 'AI写作，让你更高效',
-    icon: '/src/assets/product2.png'
+    icon: './assets/product2.png'
   },
   {
     name: '讯飞同传',
     description: '多语种会议同传服务',
-    icon: '/src/assets/product3.png'
+    icon: './assets/product3.png'
   },
   {
     name: '讯飞译制',
     description: '一站式多语种视频翻译',
-    icon: '/src/assets/product4.png'
+    icon: './assets/product4.png'
   }
 ])
 
@@ -85,22 +85,22 @@ const services = ref([
   {
     name: '听见智能会议系统',
     description: '本地化部署，智能安全',
-    icon: '/src/assets/service1.png'
+    icon: './assets/service1.png'
   },
   {
     name: '文档音视频翻译',
     description: '文档翻译精准高效送达',
-    icon: '/src/assets/service2.png'
+    icon: './assets/service2.png'
   },
   {
     name: '智慧媒体解决方案',
     description: 'AI智慧媒体整体解决方案',
-    icon: '/src/assets/service3.png'
+    icon: './assets/service3.png'
   },
   {
     name: '行业定制化解决方案',
     description: '满大平台的企业办公定制服务',
-    icon: '/src/assets/service4.png'
+    icon: './assets/service4.png'
   }
 ])
 
