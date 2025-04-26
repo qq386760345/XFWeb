@@ -1,0 +1,17 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root123456
+      MYSQL_DATABASE: xfweb
+      MYSQL_USER: xfweb
+      MYSQL_PASSWORD: xfweb123456
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+      - ./mysql/conf:/etc/mysql/conf.d
+      - ./mysql/logs:/var/log/mysql
+    restart: always 

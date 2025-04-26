@@ -1,0 +1,15 @@
+[Unit]
+Description=MySQL Server
+After=network.target
+
+[Service]
+User=mysql
+Group=mysql
+LimitNOFILE=65535
+LimitNPROC=65535
+ExecStart=/usr/server/mysql/bin/mysqld --defaults-file=/usr/server/mysql/my.cnf --basedir=/usr/server/mysql --datadir=/usr/server/mysql/data --socket=/usr/server/mysql/mysql.sock
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target 
