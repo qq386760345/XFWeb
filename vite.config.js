@@ -23,13 +23,11 @@ export default defineConfig({
     include: ['crypto-js']
   },
   build: {
+    assetsDir: 'assets',
+    assetsInclude: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.gif', '**/*.svg'],
     rollupOptions: {
-      external: [/\.(png|jpe?g|gif|svg|ico)$/i],
-      onwarn(warning, warn) {
-        if (warning.code === 'UNRESOLVED_IMPORT' && /\.(png|jpe?g|gif|svg|ico)$/i.test(warning.source)) {
-          return
-        }
-        warn(warning)
+      output: {
+        assetFileNames: 'assets/[name]-[hash][extname]'
       }
     }
   }

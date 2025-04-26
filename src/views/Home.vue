@@ -3,7 +3,7 @@
     <!-- 顶部导航栏 -->
     <el-header class="header">
       <div class="header-left">
-        <img src="../assets/logo.png" alt="Logo" class="logo">
+        <img src="/favicon.png" alt="Logo" class="logo">
         <span class="title">智慧办公SaaS平台</span>
       </div>
       <div class="header-right">
@@ -29,7 +29,7 @@
           @click="handleProductClick(product)"
         >
           <div class="card-content">
-            <img :src="product.icon" :alt="product.name" class="product-icon">
+            <img src="/favicon.png" :alt="product.name" class="product-icon">
             <h3>{{ product.name }}</h3>
             <p>{{ product.description }}</p>
           </div>
@@ -42,7 +42,7 @@
       <h2 class="section-title">更多服务 满足更多场景</h2>
       <div class="service-cards">
         <el-card class="service-card" v-for="(service, index) in services" :key="index">
-          <img :src="service.icon" :alt="service.name" class="service-icon">
+          <img src="/favicon.png" :alt="service.name" class="service-icon">
           <h3>{{ service.name }}</h3>
           <p>{{ service.description }}</p>
         </el-card>
@@ -61,46 +61,38 @@ const products = ref([
   {
     name: '讯飞听见',
     description: '你的随身录音记录助手',
-    icon: './assets/product1.png',
     route: '/tingjian'
   },
   {
     name: '讯飞写作',
-    description: 'AI写作，让你更高效',
-    icon: './assets/product2.png'
+    description: 'AI写作，让你更高效'
   },
   {
     name: '讯飞同传',
-    description: '多语种会议同传服务',
-    icon: './assets/product3.png'
+    description: '多语种会议同传服务'
   },
   {
     name: '讯飞译制',
-    description: '一站式多语种视频翻译',
-    icon: './assets/product4.png'
+    description: '一站式多语种视频翻译'
   }
 ])
 
 const services = ref([
   {
     name: '听见智能会议系统',
-    description: '本地化部署，智能安全',
-    icon: './assets/service1.png'
+    description: '本地化部署，智能安全'
   },
   {
     name: '文档音视频翻译',
-    description: '文档翻译精准高效送达',
-    icon: './assets/service2.png'
+    description: '文档翻译精准高效送达'
   },
   {
     name: '智慧媒体解决方案',
-    description: 'AI智慧媒体整体解决方案',
-    icon: './assets/service3.png'
+    description: 'AI智慧媒体整体解决方案'
   },
   {
     name: '行业定制化解决方案',
-    description: '满大平台的企业办公定制服务',
-    icon: './assets/service4.png'
+    description: '满大平台的企业办公定制服务'
   }
 ])
 

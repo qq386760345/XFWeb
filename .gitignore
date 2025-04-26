@@ -1,5 +1,8 @@
 node_modules
-dist/index.html
+dist/*
 dist/assets/index-0551fd70.js
 dist/assets/index-e08ec49f.css
 dist.zip
+dist/favicon.png
+dist/assets/index-b004dc5d.js
+dist/assets/index-ee287411.css

@@ -3,7 +3,7 @@
     <!-- 顶部导航栏 -->
     <div class="header">
       <div class="logo">
-        <img src="../assets/logo.png" alt="Logo">
+        <img src="/favicon.png" alt="Logo">
         <span>讯飞听见</span>
       </div>
       <div class="header-right">
@@ -53,7 +53,7 @@
             :image-size="200"
           >
             <template #image>
-              <img src="../assets/empty-image.svg" alt="empty">
+              <img src="/favicon.png" alt="empty">
             </template>
             <template #default>
               <el-button type="primary" @click="handleStartExperience">立即体验</el-button>

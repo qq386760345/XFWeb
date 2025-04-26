@@ -29,8 +29,34 @@ export class SpeechTranscriber {
 
   async start() {
     try {
+      // 检查浏览器是否支持 getUserMedia
+      if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+        throw new Error('您的浏览器不支持录音功能，请使用现代浏览器（如 Chrome、Firefox、Edge）')
+      }
+
+      // 检查是否在 HTTPS 环境下
+      if (window.location.protocol !== 'https:' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+        throw new Error('录音功能需要在 HTTPS 环境下使用，请确保网站使用 HTTPS 协议')
+      }
+
       // 获取麦克风权限
-      this.mediaStream = await navigator.mediaDevices.getUserMedia({ audio: true })
+      this.mediaStream = await navigator.mediaDevices.getUserMedia({ 
+        audio: {
+          echoCancellation: true,
+          noiseSuppression: true,
+          sampleRate: this.config.audioConfig.sampleRate
+        }
+      }).catch(error => {
+        if (error.name === 'NotAllowedError') {
+          throw new Error('请允许使用麦克风权限')
+        } else if (error.name === 'NotFoundError') {
+          throw new Error('未找到麦克风设备')
+        } else if (error.name === 'NotReadableError') {
+          throw new Error('麦克风设备可能被其他应用占用')
+        } else {
+          throw new Error('获取麦克风权限失败: ' + error.message)
+        }
+      })
       
       // 创建音频上下文
       this.audioContext = new (window.AudioContext || window.webkitAudioContext)({
